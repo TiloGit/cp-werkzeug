@@ -7,14 +7,14 @@
 # This image can be used to create a secured container
 # that runs safely with privileges within the container.
 #
-FROM registry.fedoraproject.org/fedora:latest
+FROM registry.fedoraproject.org/fedora:34
 
 # Don't include container-selinux and remove
 # directories used by yum that are just taking
 # up space.
 RUN dnf -y update; rpm --restore shadow-utils 2>/dev/null; \
 yum -y install podman fuse-overlayfs --exclude container-selinux; \
-dnf install jq openssl wget zip unzip bind-utils findutils iputils -y; \
+dnf install jq openssl wget zip unzip bind-utils findutils iputils nmap -y; \
 dnf clean all; \
 curl --no-progress-meter --location  https://mirror.openshift.com/pub/openshift-v4/clients/ocp/stable-4.8/openshift-client-linux.tar.gz |   \
 tar xvfz - --directory /usr/local/bin && kubectl completion bash > /etc/bash_completion.d/kubectl &&  oc completion bash > /etc/bash_completion.d/oc; \
