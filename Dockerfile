@@ -14,7 +14,7 @@ FROM registry.fedoraproject.org/fedora:34
 # up space.
 RUN dnf -y update; rpm --restore shadow-utils 2>/dev/null; \
 yum -y install podman fuse-overlayfs --exclude container-selinux; \
-dnf install jq openssl wget zip unzip bind-utils findutils iputils nmap -y; \
+dnf install jq openssl wget zip unzip bind-utils findutils iputils nmap openldap-clients -y; \
 dnf clean all; \
 curl --no-progress-meter --location  https://mirror.openshift.com/pub/openshift-v4/clients/ocp/stable-4.8/openshift-client-linux.tar.gz |   \
 tar xvfz - --directory /usr/local/bin && kubectl completion bash > /etc/bash_completion.d/kubectl &&  oc completion bash > /etc/bash_completion.d/oc; \
