@@ -4,7 +4,7 @@
 
 Cloud Pak tools
 
-based on https://github.com/containers/podman/blob/main/contrib/podmanimage/stable/Dockerfile
+based on https://github.com/containers/podman/blob/main/contrib/podmanimage/stable/Containerfile
 see also: https://github.com/noseka1/openshift-toolbox
 
 Consider to use upstream image directly: quay.io/podman/stable
