@@ -11,9 +11,9 @@ Consider to use upstream image directly: quay.io/podman/stable
 
 run like this
 
-cli one-liner
+cli one-liner (removes after exit)
 ```bash
-kubectl run -i --tty tilo-toolbox --image=quay.io/tsombrero/cp-werkzeug -l vfowner=tilo --restart=Never
+kubectl run -i --tty tilo-toolbox --image=quay.io/tsombrero/cp-werkzeug -l vfowner=tilo --rm --restart=Never
 ```
 
 yaml file
