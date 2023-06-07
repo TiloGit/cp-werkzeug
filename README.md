@@ -10,6 +10,13 @@ see also: https://github.com/noseka1/openshift-toolbox
 Consider to use upstream image directly: quay.io/podman/stable
 
 run like this
+
+cli one-liner
+```bash
+kubectl run -i --tty tilo-toolbox --image=quay.io/tsombrero/cp-werkzeug -l vfowner=tilo --restart=Never
+```
+
+yaml file
 ```yaml
 apiVersion: v1
 kind: Pod
