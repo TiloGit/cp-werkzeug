@@ -13,7 +13,11 @@ run like this
 
 cli one-liner (removes after exit)
 ```bash
+###k8s
 kubectl run -i --tty tilo-toolbox --image=quay.io/tsombrero/cp-werkzeug -l vfowner=tilo --rm --restart=Never
+
+##docker
+docker run -it --entrypoint /bin/bash quay.io/tsombrero/cp-werkzeug
 ```
 
 yaml file
