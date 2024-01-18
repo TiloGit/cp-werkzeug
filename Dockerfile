@@ -15,7 +15,7 @@ FROM registry.fedoraproject.org/fedora:latest
 ### Added more tools here on install line
 RUN dnf -y update && \
     rpm --setcaps shadow-utils 2>/dev/null && \
-    dnf -y install podman fuse-overlayfs jq openssl wget zip unzip bind-utils findutils iputils nmap openldap-clients openssh openssh-clients httpd-tools which \
+    dnf -y install podman fuse-overlayfs jq openssl wget zip unzip bind-utils findutils iputils nmap openldap-clients openssh openssh-clients httpd-tools parallel which \
         --exclude container-selinux && \
     dnf clean all && \
     curl --no-progress-meter --location  https://mirror.openshift.com/pub/openshift-v4/clients/ocp/stable-4.12/openshift-client-linux.tar.gz |   \
