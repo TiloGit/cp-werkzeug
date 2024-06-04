@@ -8,6 +8,7 @@
 # that runs safely with privileges within the container.
 #
 FROM registry.fedoraproject.org/fedora:latest
+ARG FLAVOR=stable
 
 # Don't include container-selinux and remove
 # directories used by yum that are just taking
@@ -26,7 +27,7 @@ RUN useradd podman; \
 echo -e "podman:1:999\npodman:1001:64535" > /etc/subuid; \
 echo -e "podman:1:999\npodman:1001:64535" > /etc/subgid;
 
-ARG _REPO_URL="https://raw.githubusercontent.com/containers/podman/main/contrib/podmanimage/stable"
+ARG _REPO_URL="https://raw.githubusercontent.com/containers/image_build/main/podman"
 ADD $_REPO_URL/containers.conf /etc/containers/containers.conf
 ADD $_REPO_URL/podman-containers.conf /home/podman/.config/containers/containers.conf
 
