@@ -19,7 +19,7 @@ RUN dnf -y update && \
     dnf -y install podman fuse-overlayfs jq openssl wget zip unzip bind-utils findutils iputils nmap openldap-clients openssh openssh-clients httpd-tools parallel which \
         --exclude container-selinux && \
     dnf clean all && \
-    curl --no-progress-meter --location  https://mirror.openshift.com/pub/openshift-v4/clients/ocp/stable-4.12/openshift-client-linux.tar.gz |   \
+    curl --no-progress-meter --location  https://mirror.openshift.com/pub/openshift-v4/clients/ocp/stable-4.14/openshift-client-linux.tar.gz |   \
     tar xvfz - --directory /usr/local/bin && kubectl completion bash > /etc/bash_completion.d/kubectl &&  oc completion bash > /etc/bash_completion.d/oc; \
     rm -rf /var/cache /var/log/dnf* /var/log/yum.*
 
