@@ -16,7 +16,7 @@ ARG FLAVOR=stable
 ### Added more tools here on install line
 RUN dnf -y update && \
     rpm --setcaps shadow-utils 2>/dev/null && \
-    dnf -y install podman fuse-overlayfs jq openssl wget zip unzip bind-utils findutils iputils nmap openldap-clients openssh openssh-clients httpd-tools parallel which \
+    dnf -y install podman fuse-overlayfs jq openssl wget zip unzip bind-utils findutils iputils nmap openldap-clients openssh openssh-clients httpd-tools parallel which attr \
         --exclude container-selinux && \
     dnf clean all && \
     curl --no-progress-meter --location  https://mirror.openshift.com/pub/openshift-v4/clients/ocp/stable-4.14/openshift-client-linux.tar.gz |   \
